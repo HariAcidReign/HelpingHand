@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { Platform, KeyboardAvoidingView, SafeAreaView } from "react-native";
 import { GiftedChat } from "react-native-gifted-chat";
 import Fire from "../Fire";
+// import MainWelcome from "./MainWelcome";
 
-// Instead of creating ChatScreen by mysqlf, I used the GiftedChat library. Less code, more seamless UI
+// Instead of creating ChatScreen by myself, I used the GiftedChat library. Less code, more seamless UI
 
 export default class ChatScreen extends Component {
 	state = {

@@ -3,7 +3,7 @@ import firebase from "firebase";
 class Fire {
 	constructor() {
 		this.init();
-		this.checkAuth();
+		// this.checkAuth();
 	}
 
 	init = () => {
@@ -22,13 +22,14 @@ class Fire {
 		}
 	};
 
-	checkAuth = () => {
-		firebase.auth().onAuthStateChanged((user) => {
-			if (!user) {
-				firebase.auth().signInAnonymously();
-			}
-		});
-	};
+	// checkAuth = () => {
+	// 	firebase.auth().onAuthStateChanged((user) => {
+	// 		if (!user) {
+	// 			// firebase.auth().signInAnonymously();
+	// 			firebase.auth().signInWithEmailAndPassword(user.email, user.password);
+	// 		}
+	// 	});
+	// };
 
 	send = (messages) => {
 		messages.forEach((item) => {

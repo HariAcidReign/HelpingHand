@@ -16,7 +16,7 @@ import firebase from "firebase";
 import { SafeAreaView } from "react-navigation";
 import { Ionicons } from "@expo/vector-icons";
 
-export default class LoginScreen extends Component {
+export default class SignUp extends Component {
 	state = {
 		name: "",
 		email: "",
@@ -27,12 +27,12 @@ export default class LoginScreen extends Component {
 	// continue = () => {
 	// 	this.props.navigation.navigate("Chat", { name: this.state.name });
 	// };
-	handleLogin = () => {
-		const { email, password } = this.state;
+
+	// We are assigning email and pword to user now. IN future, figure out how to add dp image, username too.
+	handleSignUp = () => {
 		firebase
 			.auth()
-			.signInWithEmailAndPassword(email, password)
-			// .then(() => this.props.navigation.navigate("Main")) // instead, directly navigate to chat n see.
+			.createUserWithEmailAndPassword(this.state.email, this.state.password)
 			.then(() =>
 				this.props.navigation.navigate("Chat", { name: this.state.name })
 			)
@@ -56,8 +56,8 @@ export default class LoginScreen extends Component {
 							/>
 						</View>
 
-						<View style={{ marginHorizontal: 160 }}>
-							<Text style={styles.header}>Login</Text>
+						<View style={{ marginHorizontal: 149 }}>
+							<Text style={styles.header}>Sign Up</Text>
 							{this.state.errorMessage && (
 								<Text style={{ color: "red" }}>{this.state.errorMessage}</Text>
 							)}
@@ -67,7 +67,7 @@ export default class LoginScreen extends Component {
 							<Text style={styles.header}>Username</Text>
 							<TextInput
 								style={styles.input}
-								placeholder="happyflowerpot"
+								placeholder="something quirky"
 								onChangeText={(name) => {
 									this.setState({ name });
 								}}
@@ -87,16 +87,15 @@ export default class LoginScreen extends Component {
 							<TextInput
 								secureTextEntry
 								style={styles.input}
-								placeholder="didn't forget yet...right?"
+								placeholder="something you won't forget"
 								onChangeText={(password) => {
 									this.setState({ password });
 								}}
 								value={this.state.password}
 							/>
 							<Button
-								style={{ marginBottom: 10, marginTop: 10 }}
-								title="Don't have an account? Sign Up"
-								onPress={() => this.props.navigation.navigate("Sign")}
+								title="Have an account already? Login"
+								onPress={() => this.props.navigation.navigate("Login")}
 							/>
 							<View
 								style={{
@@ -107,7 +106,7 @@ export default class LoginScreen extends Component {
 							>
 								<TouchableOpacity
 									style={styles.continue}
-									onPress={this.handleLogin}
+									onPress={this.handleSignUp}
 								>
 									<Ionicons
 										name="md-arrow-round-forward"
