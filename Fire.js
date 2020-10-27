@@ -1,4 +1,9 @@
-import firebase from "firebase";
+import firebase from '@react-native-firebase/app';
+import '@react-native-firebase/firestore';
+
+const app = firebase.app();// edited by Harish 
+export const db = app.firestore(); // edited by Harish
+
 
 class Fire {
 	constructor() {
