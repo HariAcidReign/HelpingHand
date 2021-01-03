@@ -1,9 +1,10 @@
 # HelpingHand
 
-A React Native Chat app with a Firebase backend, and user authentication using email. 
+A React Native Chat app with a Firebase backend, and user authentication using email. Chat function is done using the Gifted Chat library. <br/>
+The perfect chat app to socialise with during this quarantine. 
 
-<strong> Update (25/12) : </strong> This app now has a working Splash, Login and Sign-up with Firebase and OAuth, and a working (and aesthetic) chat screen (made using React-Native Gifted Chat Library). The initial plan was to integrate Video Chat as well so that Mental health volunteers could interact with the people in need via video, but unfortunately Expo doesn't support Video Calling. <br/> <em><strong> TLDR : </strong> </em> The app has to be ejected from Expo and build using native RN. I didn't have the time to do that, so I created a new project called AutoDoc which converts voice of doctor into a prescription form (in PDF), and gives the option of sharing it with the patient via Whatsapp, and reused 100% of the code from this repo. 
+## Future Scope
 
-Link to AutoDoc : https://github.com/HariAcidReign/AutoDoc/tree/Dash
+Eject the app from Expo and video calling feature (no native support on Expo). <br/>
 
 ![](HelpingGIf.gif)
